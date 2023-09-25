@@ -2,53 +2,34 @@
 <html>
   <head>
     <title>ollybanjoks career</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(50, 50, 50);
-        text-align: center;
-      }
-        
-      #banner{
-        width: 100%;
+      #banner {
         height: 360px;
-        object-fit: cover;  
+        width: 100%;
+        object-fit: cover;
       }
-      
-      h2 {
-        font-size: 32px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;   
-      }
-      
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-      
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      
     </style>
+    
   <head>
-    <div id="container">
-       <h1>Ollybanjoks Career</h1>
-      <img id="banner" src="https://ollybanjoks-career-website--ollybanjoks.repl.co/static/banner.jpeg" height="320">
-      <h2>About Ollybanjoks</h2>
-      <p class="bodytext">
+    <div class="continer">
+       <h1 class="text-center mt-2 mb-4">{{company_name}} Career</h1>
+      <img class="img-fluid" id="banner" src="https://ollybanjoks-career-website--ollybanjoks.repl.co/static/banner.jpeg" height="320">
+      <h2 class="text-center mt-2 mb-4">About Ollybanjoks</h2>
+      <p class="Lead">
       Your brain works faster when you're solving a problem than when you're day dreaming, because it's highly engaged and focused on the task at hand People are more likely to remember information if it is presented to them in a funny or unusual way, because the brain is wired to pay attention to novel and emotionally-charged information.
       </p>
-      <h2>Open Position</h2>
-      <P class="bodytext">TODO - show the jobs here</P>
-      <div style="text-align: center;">
-        <button>contact us</button> 
-        <p>Copyright 2023 Ollybanjok</p>
+      <h2 class="text-center mt-2 mb-4">Open Position</h2>
+      <div>
+        {% for job in jobs %}
+        {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg">contact us</button> 
+        <p class="mt-4">Copyright 2023 Ollybanjok</p>
       </div>        
     </div>
   </body>
